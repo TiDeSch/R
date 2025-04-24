@@ -1,7 +1,6 @@
 library(deSolve)
 library(ggplot2)
 library(dplyr)
-library(tidyr)
 
 N <- 5000
 gamma <- 1/7
