@@ -12,7 +12,6 @@ I0 <- 1
 R0 <- 0
 S0 <- N - I0 - R0
 
-
 parameters <- c(N = N,
                 gamma = gamma,
                 R_0 = R_0,
