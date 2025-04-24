@@ -65,7 +65,6 @@ for (i in 1:length(R_0_values)){
 
     p <- p + geom_hline(yintercept = f_value$root, linetype = 'dashed', color = 'darkgreen')
     plots[[i]] <- p
-    
 }
 
 grid.arrange(plots[[1]], plots[[2]], plots[[3]], ncol = 1)
