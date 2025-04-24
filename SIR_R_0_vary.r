@@ -32,6 +32,7 @@ SIR_model <- function(time, state, parameters) {
 times <- seq(0, 100, by = 1)
 
 plots <- list()
+z <- list()
 for (i in 1:length(R_0_values)){
     R_0 <- R_0_values[i]
     beta <- beta_values[i]
@@ -65,6 +66,15 @@ for (i in 1:length(R_0_values)){
 
     p <- p + geom_hline(yintercept = f_value$root, linetype = 'dashed', color = 'darkgreen')
     plots[[i]] <- p
+    z[[i]] <- f_value$root
 }
 
 grid.arrange(plots[[1]], plots[[2]], plots[[3]], ncol = 1)
+print(z)
+
+overshoot <- numeric(length(z))
+for (i in 1:length(z)){
+    OS <- z[[i]] - 1 / R_0_values[i]
+    overshoot[[i]] <- OS
+}
+print(overshoot)
